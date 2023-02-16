@@ -13,10 +13,7 @@ packages = [{include = "tsi_project"}]
 python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
-neovim = "^0.3.1"
-pyright = "^1.1.294"
-black = "^23.1.0"
-jupyter = "^1.0.0"
+jupyterlab = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]
