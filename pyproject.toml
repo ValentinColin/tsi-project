@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tsi-project"
+version = "0.1.0"
+description = "TSI/ISEP Project"
+authors = ["Maxime POPOT--CHAPUIS <maxime.popot@gmail.com>"]
+readme = "README.md"
+#packages = [{include = "tsi_project"}]
+
+[tool.poetry.dependencies]
+python = "~3.7"
+tensorflow-directml = "^1.15.8"
+matplotlib = "3.5"
+jupyterlab = "^3.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
