@@ -1,8 +1,15 @@
 [tool.poetry]
 name = "tsi-project"
 version = "0.1.0"
-description = "TSI/ISEP Project"
-authors = ["Maxime POPOT--CHAPUIS <maxime.popot@gmail.com>"]
+description = "A study project about ML/DL applied on social network (TSI/ISEP)" 
+authors = [
+    "Maxime POPOT--CHAPUIS <maxime.popot@gmail.com>",
+    "Valentin Colin <valentin.colin78@gmail.com>",
+    "Etienne Favière <eti.faviere@gmail.com>",
+    "Jules Meszaros <julesmeszaros@gmail.com>",
+    "Hugues Rubin de Cervens <huguesrdc@gmail.com>",
+    "Lucas Manic <lucasmanic.ldm@gmail.com>",
+]
 readme = "README.md"
 #packages = [{include = "tsi_project"}]
 
