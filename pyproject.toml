@@ -18,6 +18,10 @@ python = "~3.7"
 tensorflow-directml = "^1.15.8"
 matplotlib = "3.5"
 jupyterlab = "^3.6.1"
+transformers = "^4.26.1"
+scipy = "1.2.1"
+torch = "^1.13.1"
+pyuac = "^0.0.3"
 
 
 [build-system]
