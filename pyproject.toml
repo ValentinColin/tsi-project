@@ -1,27 +1,24 @@
 [tool.poetry]
 name = "tsi-project"
 version = "0.1.0"
-description = "A study project about ML/DL applied on social network (TSI/ISEP)" 
-authors = [
-    "Maxime POPOT--CHAPUIS <maxime.popot@gmail.com>",
-    "Valentin Colin <valentin.colin78@gmail.com>",
-    "Etienne Favière <eti.faviere@gmail.com>",
-    "Jules Meszaros <julesmeszaros@gmail.com>",
-    "Hugues Rubin de Cervens <huguesrdc@gmail.com>",
-    "Lucas Manic <lucasmanic.ldm@gmail.com>",
-]
+description = "A study project about ML/DL applied on social network (TSI/ISEP)"
+authors = ["Maxime POPOT--CHAPUIS <maxime.popot@gmail.com>"]
 readme = "README.md"
-#packages = [{include = "tsi_project"}]
+packages = [{include = "tsi_project"}]
 
 [tool.poetry.dependencies]
-python = "~3.7"
-tensorflow-directml = "^1.15.8"
-matplotlib = "3.5"
+python = "~3.8"
+#https://stackoverflow.com/questions/74949556/poetry-fails-to-install-tensorflow
+matplotlib = "^3.7.1"
 jupyterlab = "^3.6.1"
 transformers = "^4.26.1"
-scipy = "1.2.1"
+scipy = "^1.10.1"
 torch = "^1.13.1"
 pyuac = "^0.0.3"
+ipywidgets = "^8.0.4"
+snscrape = "^0.6.0.20230303"
+pandas = "^1.5.3"
+tensorflow = "2.10"
 
 
 [build-system]
