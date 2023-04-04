@@ -7,19 +7,16 @@ readme = "README.md"
 packages = [{include = "tsi_project"}]
 
 [tool.poetry.dependencies]
-python = "~3.8"
-#https://stackoverflow.com/questions/74949556/poetry-fails-to-install-tensorflow
+python = "~3.10"
 matplotlib = "^3.7.1"
-jupyterlab = "^3.6.1"
-transformers = "^4.26.1"
+jupyterlab = "^3.6.3"
+transformers = "^4.27.4"
 scipy = "^1.10.1"
-torch = "^1.13.1"
-pyuac = "^0.0.3"
-ipywidgets = "^8.0.4"
-snscrape = "^0.6.0.20230303"
-pandas = "^1.5.3"
-tensorflow = "2.10"
-datasets = "^2.10.1"
+torch = "^2.0.0"
+ipywidgets = "^8.0.6"
+snscrape = "^0.6.2.20230320"
+pandas = "^2.0.0"
+datasets = "^2.11.0"
 scikit-learn = "^1.2.2"
 
 
