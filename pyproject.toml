@@ -18,6 +18,8 @@ snscrape = "^0.6.2.20230320"
 pandas = "^2.0.0"
 datasets = "^2.11.0"
 scikit-learn = "^1.2.2"
+fastapi = "^0.95.0"
+uvicorn = {extras = ["standard"], version = "^0.21.1"}
 
 
 [build-system]
