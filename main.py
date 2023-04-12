@@ -11,8 +11,7 @@ class Tweet(BaseModel):
 
 @app.post("/roberta/all")
 async def comprehensive_roberta_prediction(tweet: Tweet):
-    robertaModels = Roberta()
-    labels = robertaModels.predictions(tweet.text)
+    labels = Roberta.predictions(tweet.text)
     return {"labels": labels}
 
 
@@ -21,6 +20,5 @@ async def specific_roberta_prediction(task: str, tweet: Tweet):
     """
     ["emotion", "hate", "irony", "offensive", "sentiment"]
     """
-    robertaModels = Roberta()
-    label = robertaModels.predictions(tweet.text, task)
+    label = Roberta.predictions(tweet.text, task)
     return {"labels": label}

@@ -2,8 +2,8 @@
 A machine/deep learning project about extracting and analyzing data from social network
 
 1. Install PyEnv et Poetry
-2. Se mettre en Python 3.8
-3. faire la commande : poetry env use *path vers la version 3.8*
+2. Se mettre en Python 3.10
+3. faire la commande : poetry env use *path vers la version 3.10*
 3. Dans la racine : poetry install
 4. pour utiliser l'environnement ainsi créé : poetry shell
 
@@ -13,3 +13,7 @@ https://drive.google.com/drive/folders/1BnXiiqrcJK7OLZ-LXpdmXeB56bLEkBIW?usp=sha
 Compte proprio :
 mail : projet.ia.tsi@gmail.com
 mdp : 2023TSI%isep
+
+
+uvicorn main:app --reload 
+pour lancer l'API

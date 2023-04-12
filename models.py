@@ -3,8 +3,19 @@ from transformers import AutoTokenizer
 
 
 class Roberta:
-    def __init__(self):
-        self.tasks = ["emotion", "hate", "irony", "offensive", "sentiment"]
+    @staticmethod
+    def load_models(tasks):
+        """Load all models"""
+        MODELS = {}
+        for task in tasks:
+            model_path = f"cardiffnlp/twitter-roberta-base-{task}"
+            tokenizer = AutoTokenizer.from_pretrained(model_path)
+            model = AutoModelForSequenceClassification.from_pretrained(model_path)
+            MODELS[task] = [tokenizer, model]
+        return MODELS
+
+    TASKS = ["emotion", "hate", "irony", "offensive", "sentiment"]
+    MODELS = load_models(TASKS)
 
     @staticmethod
     def preprocess(text):
@@ -16,39 +27,33 @@ class Roberta:
         return " ".join(new_text)
 
     @staticmethod
-    def load_model(task: str):
-        MODEL = f"cardiffnlp/twitter-roberta-base-{task}"
-        tokenizer = AutoTokenizer.from_pretrained(MODEL)
-        model = AutoModelForSequenceClassification.from_pretrained(MODEL)
-        return [tokenizer, model]
-
-    @staticmethod
     def prediction(text: str, task: str):
-        tokenizer, model = Roberta.load_model(task)
+        tokenizer, model = Roberta.MODELS[task]
 
         encoded_input = tokenizer(text, return_tensors="pt")
         output = model(**encoded_input)
         label = output[0][0].detach().numpy().argmax(axis=0)
         return label
 
-    def predictions(self, text: str, task: str | None = None):
+    @staticmethod
+    def predictions(text: str, task: str | None = None):
         """
         if task n'est pas déf, on retourne les prédictions de tous les modèles
         """
-        preprocessedText = self.preprocess(text)
+        preprocessedText = Roberta.preprocess(text)
         if task is None:
+            tasks = ["emotion", "hate", "irony", "offensive", "sentiment"]
             labelsDicts = {}
-            for task in self.tasks:
-                label = self.prediction(preprocessedText, task)
+            for task in tasks:
+                label = Roberta.prediction(preprocessedText, task)
                 labelsDicts[task] = int(label)
             return labelsDicts
         labelDict = {}
-        label = self.prediction(preprocessedText, task)
+        label = Roberta.prediction(preprocessedText, task)
         labelDict[task] = int(label)
         return labelDict
 
 
 if __name__ == "__main__":
-    Roberta_models = Roberta()
-    print(Roberta_models.prediction(text="lol", task="sentiment-latest"))
-    print(Roberta_models.predictions("lol"))
+
+    print(Roberta.predictions("lol"))
